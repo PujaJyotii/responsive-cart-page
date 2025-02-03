@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.container {
+  max-width: 142rem;
+  padding: 4.2rem 2.4rem;
+}
+.main-header {
+  width: 100%;
+}
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  & img {
+    width: 3rem;
+    height: 2rem;
+  }
+}
+.main-body .container {
+  background-image: url(Images/Rectangle\ 1.png);
+  text-align: center;
+
+  & img {
+    width: 3rem;
+    height: 2rem;
+  }
+
+  & p {
+    font-family: "Poppins", serif;
+  }
+}
+footer {
+  background-color: rgb(236, 201, 159);
+  font-family: "Poppins", serif;
+}
+.grid {
+  display: grid;
+}
+.grid--four--cols {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.footer--1-div,
+.footer--2-div,
+.footer--3-div,
+.footer--4-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  & img {
+    width: 2rem;
+    height: 2rem;
+  }
+  & h3 {
+    font-size: 1rem;
+  }
+  & p {
+    font-size: 0.8rem;
+  }
+}
+.nav-icons {
+  display: flex;
+  gap: 2rem;
+}
+.bold {
+  font-weight: bold;
+}
+h2 {
+  font-family: "Montserrat", serif;
+}
+.main-header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.4rem;
+}
+.navbar {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.navbar-content {
+  font-family: "Poppins", serif;
+  font-size: 1rem;
+}
+a {
+  display: inline-block;
+  color: lightgrey;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  white-space: nowrap;
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+a:hover {
+  background: rgba(0, 0, 0, 0.23);
+  color: white;
+  transform: scale(1.03);
+  text-decoration: none;
+}
+a:active {
+  transform: scale(0.98);
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  font-family: "Poppins", serif;
+}
+
+/* Flexbox container for the cart items and totals */
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Styling for the cart items table */
+.cart-items {
+  flex: 1;
+  margin-right: 2rem; /* Optional: Space between items and totals */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgb(236, 201, 159);
+}
+
+th,
+td {
+  padding: 0.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  font-weight: bold;
+}
+
+img {
+  width: 5rem; /* Adjust image size */
+  height: auto;
+  margin-right: 1rem;
+}
+
+td {
+  vertical-align: middle; /* Aligns text and images in the same line */
+}
+
+input[type="number"] {
+  width: 3rem;
+}
+
+/* Cart totals section */
+.cart-totals {
+  width: 20rem; /* Set a fixed width for the totals section */
+  padding: 2rem;
+  background-color: rgb(236, 201, 159);
+  border-radius: 0.5rem;
+}
+
+.cart-totals h3 {
+  margin-bottom: 1rem;
+}
+
+.cart-totals div {
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 0.5rem;
+  background-color: #b95e2a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: #c77250;
+}
+
+@media (width<=745px) {
+  .main-header {
+    width: 100%;
+  }
+  .main-header .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .main-body {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .cart-container {
+    flex-direction: column; /* Stack table and totals */
+    align-items: center;
+  }
+
+  .cart-items {
+    width: 100%; /* Make table take full width */
+    margin-right: 0;
+  }
+
+  table {
+    width: 100%; /* Ensure the table adjusts to the container */
+    table-layout: fixed; /* Evenly distributes columns */
+  }
+
+  th,
+  td {
+    font-size: 0.8rem; /* Reduce font size for better fit */
+    padding: 0.4rem; /* Adjust padding */
+    word-wrap: break-word; /* Allow text to wrap */
+  }
+
+  img {
+    width: 3rem; /* Reduce image size */
+  }
+
+  /* Fix for increment/decrement buttons and input field */
+
+  .cart-totals {
+    width: 100%; /* Adjust width to match table */
+    margin-top: 1rem; /* Space between table and totals */
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  footer {
+    width: 100%;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .grid--four--cols {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left; /* Center text for better appearance */
+  }
+}

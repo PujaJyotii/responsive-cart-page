@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
+    <title>Responsive Cart Layout</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <div class="navbar-brand">
+          <img src="Images/Meubel House_Logos-05.png" alt="logo" />
+          <h2>Marmeto</h2>
+        </div>
+        <div class="navbar-content">
+          <ul class="navbar">
+            <li>Home</li>
+            <li>Shop</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="nav-icons">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+    </header>
+    <main class="main-body">
+      <div class="container">
+        <img src="Images/Meubel House_Logos-05.png" alt="logo" />
+        <h2>Cart</h2>
+        <p>
+          <span class="bold">Home</span> <span class="bold">&gt;</span> Cart
+        </p>
+      </div>
+    </main>
+    <section class="hero-section">
+      <div class="cart-container">
+        
+          <!-- Left side - Cart Items Table -->
+          <div class="cart-items">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items-body">
+                <!-- Cart items will be dynamically inserted here -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Right side - Cart Totals -->
+          <div class="cart-totals">
+            <h3>Cart Totals</h3>
+            <div id="subtotal">Subtotal: ₹0</div>
+            <div id="total">Total: ₹0</div>
+            <button id="checkout">Check Out</button>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+    <footer>
+      <div class="container grid grid--four--cols">
+        <div class="footer--1-div">
+          <img src="Images/Group.png" alt="logo" />
+          <div>
+            <h3>High Quality</h3>
+            <p>crafted from top materials</p>
+          </div>
+        </div>
+        <div class="footer--2-div">
+          <img src="Images/Vector(9).png" alt="logo " />
+          <div>
+            <h3>Warranty Protection</h3>
+            <p>Over 2 years</p>
+          </div>
+        </div>
+        <div class="footer--3-div">
+          <img src="Images/Vector (1).png" alt="logo " />
+          <div>
+            <h3>Free Shipping</h3>
+            <p>Order over 150 $</p>
+          </div>
+        </div>
+        <div class="footer--4-div">
+          <img src="Images/Vector (2).png" alt="logo " />
+          <div>
+            <h3>24 / 7 Support</h3>
+            <p>Dedicated support</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
