@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCartItems();
     updateCartTotals();
 
-    alert("Order placed!");
+    alert("Order placed!!");
   });
 
   // Remove item from the cart
