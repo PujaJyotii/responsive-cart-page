@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutButton = document.getElementById("checkout");
 
   let cartData = []; // Stores cart items
-  let itemToRemove = null; // For tracking the item to remove
 
   // Fetch the cart data
   fetchCartData();
@@ -40,24 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
             item.quantity
           }" data-index="${index}" min="1">
         </td>
-        <td>₹${formatCurrency(item.price * item.quantity)}
+        <td>₹<span class="item-total">${formatCurrency(
+          item.price * item.quantity
+        )}</span>
         <i class="fa-solid fa-trash" data-index="${index}"></i></td>
-    
-          
-        
       `;
 
       // Add event listener for quantity change
-      cartItemRow
-        .querySelector('input[type="number"]')
-        .addEventListener("input", (e) => {
-          updateQuantity(index, e.target.value);
-        });
-
-      // Add event listener for trash icon click
-      cartItemRow.querySelector(".fa-trash").addEventListener("click", (e) => {
-        const itemIndex = e.target.getAttribute("data-index");
-        removeItem(itemIndex);
+      const quantityInput = cartItemRow.querySelector('input[type="number"]');
+      quantityInput.addEventListener("input", (e) => {
+        updateQuantity(index, e.target.value);
       });
 
       cartItemsBody.appendChild(cartItemRow);
@@ -69,23 +60,42 @@ document.addEventListener("DOMContentLoaded", () => {
     return amount.toLocaleString("en-IN");
   }
 
-  // Update cart item quantity
+  // Update cart item quantity and total price
   function updateQuantity(index, quantity) {
     const item = cartData[index];
-    item.quantity = parseInt(quantity);
-    renderCartItems();
+
+    if (quantity.trim() === "") {
+      item.quantity = ""; // Keep input empty
+    } else {
+      item.quantity = parseInt(quantity, 10);
+    }
+
     updateCartTotals();
+    updateItemTotal(index);
   }
 
   // Update cart totals
   function updateCartTotals() {
     const subtotal = cartData.reduce(
-      (sum, item) => sum + item.price * item.quantity,
+      (sum, item) => sum + item.price * (item.quantity || 0), // Treat empty as 0 in calculations
       0
     );
     const total = subtotal; // Assuming no additional taxes or discounts
+
     subtotalElement.textContent = `Subtotal: ₹${formatCurrency(subtotal)}`;
     totalElement.textContent = `Total: ₹${formatCurrency(total)}`;
+  }
+
+  // Update individual item total dynamically
+  function updateItemTotal(index) {
+    const item = cartData[index];
+    const itemTotal = item.quantity ? item.price * item.quantity : 0; // Treat empty as 0
+    const itemTotalElement =
+      cartItemsBody.querySelectorAll(".item-total")[index];
+
+    if (itemTotalElement) {
+      itemTotalElement.textContent = formatCurrency(itemTotal);
+    }
   }
 
   // Checkout button functionality
